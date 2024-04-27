@@ -48,6 +48,7 @@ $ ssh vyos@192.168.122.2
 
 
 copy script to router
+* link to script [vyos-config.sh](https://github.com/tosin2013/demo-virt/blob/rhpds/demo.redhat.com/vyos-config-1.5.sh)
 ```bash
 $ vi vyos-config.sh
 $ chmod +x vyos-config.sh

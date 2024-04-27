@@ -56,36 +56,36 @@ show nat source
 commit
 run ping  1.1.1.1 count 3 interface 192.168.54.1
 set service dhcp-server shared-network-name Lab subnet 192.168.50.0/24 default-router '192.168.50.1'
-set service dhcp-server shared-network-name Lab subnet 192.168.50.0/24 name-server '10.1.240.46'
-set service dhcp-server shared-network-name Lab subnet 192.168.50.0/24 domain-name 'lab.tosins-testing.io'
+set service dhcp-server shared-network-name Lab subnet 192.168.50.0/24 name-server '1.1.1.1'
+set service dhcp-server shared-network-name Lab subnet 192.168.50.0/24 domain-name 'lab.example.com'
 set service dhcp-server shared-network-name Lab subnet 192.168.50.0/24 lease '86400'
 set service dhcp-server shared-network-name Lab subnet 192.168.50.0/24 range 0 start 192.168.50.100
 set service dhcp-server shared-network-name Lab subnet 192.168.50.0/24 range 0 stop '192.168.50.199'
 commit 
 set service dhcp-server shared-network-name Disco subnet 192.168.52.0/24 default-router '192.168.52.1'
-set service dhcp-server shared-network-name Disco subnet 192.168.52.0/24 name-server '10.1.240.46'
-set service dhcp-server shared-network-name Disco subnet 192.168.52.0/24 domain-name 'lab.tosins-testing.io'
+set service dhcp-server shared-network-name Disco subnet 192.168.52.0/24 name-server '1.1.1.1'
+set service dhcp-server shared-network-name Disco subnet 192.168.52.0/24 domain-name 'lab.example.com'
 set service dhcp-server shared-network-name Disco subnet 192.168.52.0/24 lease '86400'
 set service dhcp-server shared-network-name Disco subnet 192.168.52.0/24 range 0 start 192.168.52.100
 set service dhcp-server shared-network-name Disco subnet 192.168.52.0/24 range 0 stop '192.168.52.199'
 commit 
 set service dhcp-server shared-network-name Trans Proxy subnet 192.168.54.0/24 default-router '192.168.54.1'
-set service dhcp-server shared-network-name Trans Proxy subnet 192.168.54.0/24 name-server '10.1.240.46'
-set service dhcp-server shared-network-name Trans Proxy subnet 192.168.54.0/24 domain-name 'lab.tosins-testing.io'
+set service dhcp-server shared-network-name Trans Proxy subnet 192.168.54.0/24 name-server '1.1.1.1'
+set service dhcp-server shared-network-name Trans Proxy subnet 192.168.54.0/24 domain-name 'lab.example.com'
 set service dhcp-server shared-network-name Trans Proxy subnet 192.168.54.0/24 lease '86400'
 set service dhcp-server shared-network-name Trans Proxy subnet 192.168.54.0/24 range 0 start 192.168.54.100
 set service dhcp-server shared-network-name Trans Proxy subnet 192.168.54.0/24 range 0 stop '192.168.54.199'
 commit 
 set service dhcp-server shared-network-name Metal subnet 192.168.56.0/24 default-router '192.168.56.1'
-set service dhcp-server shared-network-name Metal subnet 192.168.56.0/24 name-server '10.1.240.46'
-set service dhcp-server shared-network-name Metal subnet 192.168.56.0/24 domain-name 'lab.tosins-testing.io'
+set service dhcp-server shared-network-name Metal subnet 192.168.56.0/24 name-server '1.1.1.1'
+set service dhcp-server shared-network-name Metal subnet 192.168.56.0/24 domain-name 'lab.example.com'
 set service dhcp-server shared-network-name Metal subnet 192.168.56.0/24 lease '86400'
 set service dhcp-server shared-network-name Metal subnet 192.168.56.0/24 range 0 start 192.168.56.100
 set service dhcp-server shared-network-name Metal subnet 192.168.56.0/24 range 0 stop '192.168.56.199'
 commit 
 set service dhcp-server shared-network-name Provisioning subnet 192.168.58.0/24 default-router '192.168.58.1'
-set service dhcp-server shared-network-name Provisioning subnet 192.168.58.0/24 name-server '10.1.240.46'
-set service dhcp-server shared-network-name Provisioning subnet 192.168.58.0/24 domain-name 'lab.tosins-testing.io'
+set service dhcp-server shared-network-name Provisioning subnet 192.168.58.0/24 name-server '1.1.1.1'
+set service dhcp-server shared-network-name Provisioning subnet 192.168.58.0/24 domain-name 'lab.example.com'
 set service dhcp-server shared-network-name Provisioning subnet 192.168.58.0/24 lease '86400'
 set service dhcp-server shared-network-name Provisioning subnet 192.168.58.0/24 range 0 start 192.168.58.100
 set service dhcp-server shared-network-name Provisioning subnet 192.168.58.0/24 range 0 stop '192.168.58.199'
