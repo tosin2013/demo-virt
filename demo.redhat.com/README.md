@@ -4,7 +4,7 @@
 * [Deploy on the base system on Red Hat Product Demo System using the following steps.](https://tosin2013.github.io/qubinode_navigator/deployments/demo-redhat-com.html)
 
 ## Step 1: Configure Networking on the Host
-* [Configure Networking on the Host](step1.md)
+* [Configure Networking on the Host](docs/step1.md)
   
 ## Step 2: Deploy OpenShift
-* [Deploy OpenShift](step2.md)
+* [Deploy OpenShift](docs/step2.md)
