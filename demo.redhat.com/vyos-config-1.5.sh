@@ -41,21 +41,21 @@ set nat source rule 11 translation address masquerade
 show nat source
 commit
 run ping  1.1.1.1 count 3 interface 192.168.49.1
-set nat source rule 11 outbound-interface name 'eth0'
-set nat source rule 11 source address 192.168.50.0/24
-set nat source rule 11 translation address masquerade
-show nat source
-commit
-run ping  1.1.1.1 count 3 interface 192.168.50.1
 set nat source rule 12 outbound-interface name 'eth0'
-set nat source rule 12 source address 192.168.52.0/24
+set nat source rule 12 source address 192.168.50.0/24
 set nat source rule 12 translation address masquerade
 show nat source
 commit
-run ping  1.1.1.1 count 3 interface 192.168.52.1
+run ping  1.1.1.1 count 3 interface 192.168.50.1
 set nat source rule 13 outbound-interface name 'eth0'
-set nat source rule 13 source address 192.168.54.0/24
+set nat source rule 13 source address 192.168.52.0/24
 set nat source rule 13 translation address masquerade
+show nat source
+commit
+run ping  1.1.1.1 count 3 interface 192.168.52.1
+set nat source rule 14 outbound-interface name 'eth0'
+set nat source rule 14 source address 192.168.54.0/24
+set nat source rule 14 translation address masquerade
 show nat source
 commit
 run ping  1.1.1.1 count 3 interface 192.168.54.1
