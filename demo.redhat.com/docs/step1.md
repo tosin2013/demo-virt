@@ -100,7 +100,7 @@ echo "Available NetworkManager connections:"
 nmcli con show
 
 # Prompt user to enter the profile name
-read -p "Enter the name of the NetworkManager profile you wish to modify: " profile_name
+read -p "Enter the name of the NetworkManager profile you wish to modify select virbr0: " profile_name
 
 # Confirm the profile name
 nmcli con show "$profile_name" &>/dev/null
