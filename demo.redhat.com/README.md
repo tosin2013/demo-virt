@@ -2,6 +2,7 @@
 
 ## Pre-requisites
 * [Deploy on the base system on Red Hat Product Demo System using the following steps.](https://tosin2013.github.io/qubinode_navigator/deployments/demo-redhat-com.html)
+* [Configure One Dev Server](https://tosin2013.github.io/qubinode_navigator/plugins/onedev.html)
 
 ## Step 1: Configure Networking on the Host
 * [Configure Networking on the Host](docs/step1.md)

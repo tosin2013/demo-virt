@@ -3,7 +3,14 @@
 ## Deploy DNS Server on Equinix Metal
 [Deploy freeipa vm](https://tosin2013.github.io/qubinode_navigator/plugins/onedev-kcli-pipelines.html)
 
+## Configure OneDev Pipeline
+[Configure OneDev Pipeline](https://tosin2013.github.io/qubinode_navigator/plugins/onedev-kcli-pipelines.html)
+
+
+
 ## Deploy vyos router on KVM
+![20240502172209](https://i.imgur.com/1hinPuI.png)
+![20240502172909](https://i.imgur.com/X7ULdH6.png)
 *When vm has deployed you will see the folowing*
 ![20240427110356](https://i.imgur.com/PdnTynQ.png)
 ---
