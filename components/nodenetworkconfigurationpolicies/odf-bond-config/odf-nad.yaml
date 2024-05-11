@@ -15,7 +15,7 @@ spec:
         "capabilities": { "ips": true }, 
         "master": "bond1.1925", 
         "mode": "bridge",
-        "ipam": "ipam": {
+        "ipam":  {
     	    "type": "whereabouts",
     	    "range": "192.168.19.0/24"
       }, {
