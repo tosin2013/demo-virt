@@ -43,6 +43,6 @@ spec:
       bridge-mappings:
         - localnet: localnet3
           bridge: br-1
-          state: up
+          state: present
   nodeSelector:
     node-role.kubernetes.io/infra: '' 
