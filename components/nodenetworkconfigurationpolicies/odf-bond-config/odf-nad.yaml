@@ -7,7 +7,7 @@ spec:
   config: '{
   	"cniVersion": "0.3.1",
   	"type": "macvlan",
-  	"master": "bond1.1925",
+  	"master": "macvlan1",
   	"mode": "bridge",
   	"ipam": {
     	    "type": "whereabouts",
