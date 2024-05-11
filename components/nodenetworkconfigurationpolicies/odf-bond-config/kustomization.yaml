@@ -3,9 +3,4 @@ kind: Kustomization
 
 resources:
   - base-network-policy.yaml
-
-patches:
-  - path: patch-file.yaml
-    target:
-      kind: NodeNetworkConfigurationPolicy
-      name: bond1-vlan1925-odf
+  - odf-nad.yaml 

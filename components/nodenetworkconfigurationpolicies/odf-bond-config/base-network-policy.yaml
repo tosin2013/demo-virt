@@ -42,7 +42,7 @@ spec:
     ovn:
       bridge-mappings:
         - localnet: localnet3
-          bridge: br-1
+          bridge: br-1925
           state: absent
   nodeSelector:
     node-role.kubernetes.io/infra: '' 
