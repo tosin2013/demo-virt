@@ -7,7 +7,7 @@ spec:
     interfaces:
       - name: bond1
         type: bond
-        state: absent
+        state: up
         link-aggregation:
           mode: '802.3ad'
           options:
@@ -20,7 +20,7 @@ spec:
           enabled: false
       - name: bond1.1925
         type: vlan
-        state: absent
+        state: up
         ipv4:
           dhcp: false
           enabled: false
@@ -29,7 +29,7 @@ spec:
           id: 1925
       - name: br-1925
         type: linux-bridge
-        state: absent
+        state: up
         bridge:
           options:
             stp:
@@ -39,19 +39,10 @@ spec:
         ipv4:
           dhcp: false
           enabled: false
-      - name: macvlan1
-        type: mac-vlan
-        state: absent
-        mac-vlan:
-          mode: bridge
-          base-iface: bond1.1925
-        ipv4:
-          dhcp: false
-          enabled: true
     ovn:
       bridge-mappings:
         - localnet: localnet3
           bridge: br-1925
-          state: absent
+          state: present
   nodeSelector:
     node-role.kubernetes.io/infra: '' 
