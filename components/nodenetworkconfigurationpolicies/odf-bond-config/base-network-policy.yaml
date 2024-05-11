@@ -45,4 +45,4 @@ spec:
           bridge: br-1
           state: absent
   nodeSelector:
-    node-role.kubernetes.io/worker: '' 
+    node-role.kubernetes.io/infra: '' 

@@ -1,7 +1,7 @@
 apiVersion: nmstate.io/v1
 kind: NodeNetworkConfigurationPolicy
 metadata:
-  name: example-three
+  name: bond1-vlan1925-node-4
 spec:
   desiredState:
     interfaces:
@@ -12,9 +12,9 @@ spec:
           mode: '802.3ad'
           options:
             miimon: '140'
-          port:
-            - enp8s0
+          ports:
             - enp9s0
+            - enp10s0
         ipv4:
           dhcp: false
           enabled: false
@@ -27,7 +27,7 @@ spec:
         vlan:
           base-iface: bond1
           id: 1925
-      - name: br-3
+      - name: br-1
         type: linux-bridge
         state: up
         bridge:
@@ -42,7 +42,24 @@ spec:
     ovn:
       bridge-mappings:
         - localnet: localnet3
-          bridge: br-3
+          bridge: br-1
           state: present
   nodeSelector:
-    kubernetes.io/hostname: ocp4-lab-worker-3
+    kubernetes.io/hostname: node-4
+---
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: odf-public
+  namespace: openshift-storage
+spec:
+  config: '{
+  	"cniVersion": "0.3.1",
+  	"type": "macvlan",
+  	"master": "br-1",
+  	"mode": "bridge",
+  	"ipam": {
+    	    "type": "whereabouts",
+    	    "range": "192.168.52.0/24"
+  	}
+  }'
