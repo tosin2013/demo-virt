@@ -1,0 +1,9 @@
+- op: replace
+  path: /spec/template/spec/source/repoURL
+  value: 'https://github.com/tosin2013/demo-virt.git'
+- op: replace
+  path: /spec/template/spec/source/targetRevision
+  value: rhpds
+- op: replace
+  path: /metadata/name
+  value: cluster-operators-applicationset-kvm
