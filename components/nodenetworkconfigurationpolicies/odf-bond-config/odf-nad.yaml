@@ -3,7 +3,6 @@ kind: NetworkAttachmentDefinition
 metadata:
   annotations:
     description: ODF Network 192.168.52.0/24 V1925 MACVLAN
-    k8s.v1.cni.cncf.io/resourceName: bridge.network.kubevirt.io/br-1925
   name: nad-macvlan
   namespace: openshift-storage
 spec:
@@ -14,7 +13,7 @@ spec:
     "plugins": [{ 
         "type": "macvlan",
         "capabilities": { "ips": true }, 
-        "master": "br-1925", 
+        "master": "bond1.1925", 
         "mode": "bridge",
         "ipam": {
           "type": "static"
