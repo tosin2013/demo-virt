@@ -1,25 +1,17 @@
-apiVersion: k8s.cni.cncf.io/v1
+apiVersion: "k8s.cni.cncf.io/v1"
 kind: NetworkAttachmentDefinition
 metadata:
-  annotations:
-    description: ODF Network 192.168.52.0/24 V1925 MACVLAN
-  name: nad-macvlan
+  name: odf-public
   namespace: openshift-storage
 spec:
-  config: |-
-    {
-    "cniVersion": "0.3.1",
-    "name": "macvlan", 
-    "plugins": [{ 
-        "type": "macvlan",
-        "capabilities": { "ips": true }, 
-        "master": "bond1.1925", 
-        "mode": "bridge",
-        "ipam":  {
+  config: '{
+  	"cniVersion": "0.3.1",
+  	"type": "macvlan",
+  	"master": "bond1.1925",
+  	"mode": "bridge",
+  	"ipam": {
     	    "type": "whereabouts",
-    	    "range": "192.168.19.0/24"
-      }, {
-        "capabilities": { "mac": true }, 
-        "type": "tuning"
-      }]
-    }
+    	    "range": "192.168.52.0/24"
+  	}
+  }'
+
