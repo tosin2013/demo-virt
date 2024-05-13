@@ -33,7 +33,7 @@
 **The vm will shut down and you must manually start it**
 
 ## Configure External interface
-*if you are using the default kvm network the ip address can be 192..168.122.x*
+*if you are using the default kvm network the ip address can be 192.168.122.x*
 ```bash
 $ configure
 $ set interfaces ethernet eth0 address 192.168.122.2/24
