@@ -16,8 +16,12 @@ set interfaces ethernet eth2 vif 1925 address '192.168.52.1/24'
 run show interfaces
 set interfaces ethernet eth3 address 192.168.53.1/24
 set interfaces ethernet eth3 description ETH3
-set interfaces ethernet eth3 vif 1926 description 'Trans-Proxy'
-set interfaces ethernet eth3 vif 1926 address '192.168.54.1/24'
+set interfaces pseudo-ethernet peth0 source-interface eth3
+set interfaces pseudo-ethernet peth0 address 192.168.54.1/24
+# Set a description for the MACVLAN interface
+set interfaces pseudo-ethernet peth0 description 'macvlan'
+# Assign an IP address to the MACVLAN interface
+#set interfaces pseudo-ethernet peth0 address '192.168.54.1/24'
 run show interfaces
 set interfaces ethernet eth4 address 192.168.55.1/24
 set interfaces ethernet eth4 description ETH4
