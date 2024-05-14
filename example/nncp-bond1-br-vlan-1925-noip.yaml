@@ -13,8 +13,8 @@ spec:
           options:
             miimon: '140'
           ports:
+            - enp8s0
             - enp9s0
-            - enp10s0
         ipv4:
           dhcp: false
           enabled: false
