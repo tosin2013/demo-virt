@@ -1,0 +1,49 @@
+apiVersion: nmstate.io/v1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: bond1-vlan1925-lab-worker-4
+spec:
+  desiredState:
+    interfaces:
+      - name: bond1
+        type: bond
+        state: up
+        link-aggregation:
+          mode: '802.3ad'
+          options:
+            miimon: '140'
+          ports:
+            - enp8s0
+            - enp9s0
+        ipv4:
+          dhcp: false
+          enabled: false
+      - name: bond1.1925
+        type: vlan
+        state: up
+        ipv4:
+          dhcp: false
+          enabled: false
+        vlan:
+          base-iface: bond1
+          id: 1925
+      - name: br-1
+        type: linux-bridge
+        state: up
+        bridge:
+          options:
+            stp:
+              enabled: true
+          port:
+            - name: bond1.1925
+        ipv4:
+          dhcp: false
+          enabled: false
+    ovn:
+      bridge-mappings:
+        - localnet: localnet3
+          bridge: br-1
+          state: present
+  nodeSelector:
+    #node-role.kubernetes.io/worker: '' 
+    kubernetes.io/hostname: lab-worker-4
