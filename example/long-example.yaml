@@ -14,8 +14,8 @@ spec:
       link-aggregation:
         mode: 802.3ad
         port:
-          - enp6s0f0
-          - enp6s0f1
+          - enp9s0
+          - enp10s0
       ipv4:
         enabled: false
     - name: ovs-br1 
@@ -31,7 +31,7 @@ spec:
         - name: bond1 
     ovn:
       bridge-mappings:
-      - localnet: vlan-2024 
+      - localnet: vlan-1925 
         bridge: ovs-br1 
         state: present 
       - localnet: vlan-1993 
