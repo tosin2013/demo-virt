@@ -1,0 +1,29 @@
+apiVersion: nmstate.io/v1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: bond2-migration-macvlan
+spec:
+  nodeSelector:
+    #node-role.kubernetes.io/worker: '' 
+    kubernetes.io/hostname: lab-ctlplane-0
+  desiredState:
+    interfaces:
+    - name: bond2
+      state: up
+      type: bond
+      link-aggregation:
+        mode: 802.3ad
+        port:
+          - enp11s0
+          - enp12s0
+      ipv4:
+        enabled: false
+    - name: bond2.1927
+      type: vlan
+      state: up
+      ipv4:
+        dhcp: false
+        enabled: false
+      vlan:
+        base-iface: bond2
+        id: 1927

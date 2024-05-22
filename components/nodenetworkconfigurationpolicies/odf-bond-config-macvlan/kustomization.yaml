@@ -2,6 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - base-network-policy.yaml
+  - odf-base-network-policy.yaml
   - odf-nad.yaml 
+  - migration-base-network-policy.yaml
   - migration-nad.yaml

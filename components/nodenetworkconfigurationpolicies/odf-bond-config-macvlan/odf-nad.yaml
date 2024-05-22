@@ -7,11 +7,12 @@ metadata:
 spec:
   config: '{
   	"cniVersion": "0.3.1",
+    "name": "odf-public",
   	"type": "macvlan",
-  	"master": "br-1",
+  	"master": "bond1.1925",
   	"mode": "bridge",
   	"ipam": {
     	    "type": "whereabouts",
-    	    "range": "192.168.52.0/24"
+    	    "range": "192.168.54.0/24"
   	}
   }'

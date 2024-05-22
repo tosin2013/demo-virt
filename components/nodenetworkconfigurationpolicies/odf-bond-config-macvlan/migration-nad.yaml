@@ -9,10 +9,10 @@ spec:
     "cniVersion": "0.3.1",
     "name": "migration-bridge",
     "type": "macvlan",
-    "master": "br-1", 
+    "master": "bond2.1927", 
     "mode": "bridge",
     "ipam": {
       "type": "whereabouts", 
-      "range": "192.168.52.0/24" 
+      "range": "192.168.56.0/24" 
     }
   }'

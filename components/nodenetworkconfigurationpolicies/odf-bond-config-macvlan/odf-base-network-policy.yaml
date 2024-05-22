@@ -1,0 +1,29 @@
+apiVersion: nmstate.io/v1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: bond1-odf-macvlan
+spec:
+  nodeSelector:
+    #node-role.kubernetes.io/worker: '' 
+    kubernetes.io/hostname: lab-ctlplane-0
+  desiredState:
+    interfaces:
+    - name: bond1
+      state: up
+      type: bond
+      link-aggregation:
+        mode: 802.3ad
+        port:
+          - enp9s0
+          - enp10s0
+      ipv4:
+        enabled: false
+    - name: bond1.1925
+      type: vlan
+      state: up
+      ipv4:
+        dhcp: false
+        enabled: false
+      vlan:
+        base-iface: bond1
+        id: 1925
