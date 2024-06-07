@@ -72,6 +72,14 @@ $ vi vyos-config.sh
 $ chmod +x vyos-config.sh
 ```
 
+**Optional: if you run the onedev pipeline a script will generated in the home directory**
+```
+$ ls -lath vyos-config.sh 
+$ scp vyos-config.sh vyos@192.168.122.2:/tmp
+$ chmod +x /tmp/vyos-config.sh
+$ vbash  /tmp/vyos-config.sh 
+```
+
 **run script**
 ```bash
 vbash vyos-config.sh
