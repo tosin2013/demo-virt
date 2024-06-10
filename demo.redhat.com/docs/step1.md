@@ -76,6 +76,7 @@ $ chmod +x vyos-config.sh
 ```
 $ ls -lath vyos-config.sh 
 $ scp vyos-config.sh vyos@192.168.122.2:/tmp
+$ ssh vyos@192.168.122.2
 $ chmod +x /tmp/vyos-config.sh
 $ vbash  /tmp/vyos-config.sh 
 ```
