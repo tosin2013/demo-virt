@@ -6,7 +6,9 @@
 ## Configure OneDev Pipeline
 [Configure OneDev Pipeline](https://tosin2013.github.io/qubinode_navigator/plugins/onedev-kcli-pipelines.html)
 
-
+## This will also automatically deploy while running 
+[OneDev - Agent based Installer Pipelines - External Deployment](https://tosin2013.github.io/qubinode_navigator/plugins/onedev-agent-based-external-deployment.html)
+[OneDev - Agent based Installer Pipelines - Internal Deployment](https://tosin2013.github.io/qubinode_navigator/plugins/onedev-agent-based-internal-deployment.html)
 
 ## Deploy vyos router on KVM
 ![20240502172209](https://i.imgur.com/1hinPuI.png)
