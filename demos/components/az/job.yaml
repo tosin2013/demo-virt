@@ -1,0 +1,63 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: node-labeler
+  namespace: demo-virt
+  generateName: node-labeler-
+  labels:
+    app: node-labeler
+spec:
+  backoffLimit: 2
+  template:
+    spec:
+      restartPolicy: Never
+      serviceAccount: node-labeler
+      serviceAccountName: node-labeler
+      containers:
+        - name: labeler
+          image: registry.redhat.io/openshift4/ose-cli
+          envFrom:
+            - configMapRef:
+                name: node-labeler
+          command:
+            - /bin/bash
+            - -c
+            - |
+              echo "Checking nodes which match '${selector}' for an existing label '${label}'"
+
+              nodes=$(oc get nodes --sort-by '{.metadata.name}' -l "${label}" -l "${selector}" -L "${label}" 2> /dev/null)
+
+              if [ -n "$nodes" ]; then
+                echo "Availability zone label already exists on:"
+                echo "$nodes"
+                echo
+
+                if [ "$replace_zones" = "true" ]; then
+                  echo "Overwriting"
+                  overwrite='--overwrite'
+                else
+                  echo "Quiting"
+                  exit 1
+                fi
+              fi
+
+              echo
+              echo "Labeling nodes '${selector}' with availability zones '${label}=${zone_format}' maintaining $nodes_per_zone nodes per zone"
+
+              selected_nodes=$(oc get nodes -l "${selector}" -o name --sort-by '{.metadata.name}')
+
+              counter=0
+              zone=0
+              for node in $selected_nodes; do
+                if (( counter % nodes_per_zone == 0 )); then
+                  (( zone++ ))
+                fi
+
+                oc label $node $overwrite "$label"="$(printf ${zone_format} $zone)"
+
+                (( counter++ ))
+              done
+
+              echo
+              oc get nodes -l "${label}" -L "${label}"
