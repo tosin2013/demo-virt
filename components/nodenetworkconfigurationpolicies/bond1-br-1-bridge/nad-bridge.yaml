@@ -3,6 +3,9 @@
 apiVersion: k8s.cni.cncf.io/v1
 kind: NetworkAttachmentDefinition
 metadata:
+  annotations:
+    description: Lab Network 192.168.52.0/24 V1925
+    k8s.v1.cni.cncf.io/resourceName: bridge.network.kubevirt.io/br-1
   name: cnv-linux-bridge-vlan-dhcp
   namespace: default
 spec:

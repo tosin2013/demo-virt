@@ -1,7 +1,7 @@
 apiVersion: nmstate.io/v1
 kind: NodeNetworkConfigurationPolicy
 metadata:
-  name: bond1-vlan1925-lab-worker-4
+  name: bond1-vlan1925-br-1
 spec:
   desiredState:
     interfaces:
@@ -39,11 +39,6 @@ spec:
         ipv4:
           dhcp: false
           enabled: false
-    ovn:
-      bridge-mappings:
-        - localnet: localnet3
-          bridge: br-1
-          state: present
   nodeSelector:
+    
     #node-role.kubernetes.io/worker: '' 
-    kubernetes.io/hostname: lab-worker-4

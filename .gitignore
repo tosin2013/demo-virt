@@ -1,2 +1,5 @@
 *.tar.gz
-vmware-vix-disklib-distrib
+vmware-vix-disklib-distribaider-env/bin/activate
+aider_setup.sh
+aider-env/bin/activate
+.aider*
