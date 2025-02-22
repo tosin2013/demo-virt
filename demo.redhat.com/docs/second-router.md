@@ -52,13 +52,13 @@ $ exit
 
 ssh into router
 ```bash
-$ ssh vyos@192.168.122.2
+$ ssh vyos@192.168.122.3
 ```
 
 
 **Copy script to router**
 * link to script [vyos-config.sh](https://raw.githubusercontent.com/tosin2013/demo-virt/refs/heads/rhpds/demo.redhat.com/vyos-config-1.5-second-router.sh)
-* If are using not 192.168.122.2 as the ip address of the route or would like to edit items like dns server, you can edit the script
+* If are using not 192.168.122.3 as the ip address of the route or would like to edit items like dns server, you can edit the script
 * Update the script to use the ip address from the created DNS Server in vim `:%s/1.1.1.1/newip/g`
 ```bash
 $ vi vyos-config.sh
@@ -69,8 +69,8 @@ $ chmod +x vyos-config.sh
 ```
 $ sudo su - 
 $ ls -lath vyos-config.sh 
-$ scp vyos-config.sh vyos@192.168.122.2:/tmp
-$ ssh vyos@192.168.122.2
+$ scp vyos-config.sh vyos@192.168.122.3:/tmp
+$ ssh vyos@192.168.122.3
 $ chmod +x /tmp/vyos-config.sh
 $ vbash  /tmp/vyos-config.sh 
 ```
@@ -82,16 +82,16 @@ vbash vyos-config.sh
 
 **Add routes to linux server**
 ```
-sudo ip route add 192.168.59.0/24 via 192.168.122.2
-sudo ip route add 192.168.60.0/24 via 192.168.122.2
-sudo ip route add 192.168.61.0/24 via 192.168.122.2
-sudo ip route add 192.168.62.0/24 via 192.168.122.2
-sudo ip route add 192.168.63.0/24 via 192.168.122.2
-sudo ip route add 192.168.64.0/24 via 192.168.122.2
-sudo ip route add 192.168.65.0/24 via 192.168.122.2
-sudo ip route add 192.168.66.0/24 via 192.168.122.2
-sudo ip route add 192.168.67.0/24 via 192.168.122.2
-sudo ip route add 192.168.68.0/24 via 192.168.122.2
+sudo ip route add 192.168.59.0/24 via 192.168.122.3
+sudo ip route add 192.168.60.0/24 via 192.168.122.3
+sudo ip route add 192.168.61.0/24 via 192.168.122.3
+sudo ip route add 192.168.62.0/24 via 192.168.122.3
+sudo ip route add 192.168.63.0/24 via 192.168.122.3
+sudo ip route add 192.168.64.0/24 via 192.168.122.3
+sudo ip route add 192.168.65.0/24 via 192.168.122.3
+sudo ip route add 192.168.66.0/24 via 192.168.122.3
+sudo ip route add 192.168.67.0/24 via 192.168.122.3
+sudo ip route add 192.168.68.0/24 via 192.168.122.3
 ```
 
 **nmcli script to add routes permanently**
@@ -114,16 +114,16 @@ fi
 
 # Define the routes to be added
 declare -a routes=(
-    "192.168.59.0/24 192.168.122.2"
-    "192.168.60.0/24 192.168.122.2"
-    "192.168.61.0/24 192.168.122.2"
-    "192.168.62.0/24 192.168.122.2"
-    "192.168.63.0/24 192.168.122.2"
-    "192.168.64.0/24 192.168.122.2"
-    "192.168.65.0/24 192.168.122.2"
-    "192.168.66.0/24 192.168.122.2"
-    "192.168.67.0/24 192.168.122.2"
-    "192.168.68.0/24 192.168.122.2"
+    "192.168.59.0/24 192.168.122.3"
+    "192.168.60.0/24 192.168.122.3"
+    "192.168.61.0/24 192.168.122.3"
+    "192.168.62.0/24 192.168.122.3"
+    "192.168.63.0/24 192.168.122.3"
+    "192.168.64.0/24 192.168.122.3"
+    "192.168.65.0/24 192.168.122.3"
+    "192.168.66.0/24 192.168.122.3"
+    "192.168.67.0/24 192.168.122.3"
+    "192.168.68.0/24 192.168.122.3"
 )
 
 # Add routes to the profile
