@@ -34,11 +34,11 @@ set interfaces ethernet eth5 vif 1928 description 'Provisioning'
 set interfaces ethernet eth5 vif 1928 address '192.168.68.1/24'
 run show interfaces
 set nat source rule 10 outbound-interface name 'eth0'
-set nat source rule 10 source address 192.168.122.2
+set nat source rule 10 source address 192.168.122.3
 set nat source rule 10 translation address masquerade
 show nat source
 commit
-run ping  1.1.1.1 count 3 interface 192.168.122.2
+run ping  1.1.1.1 count 3 interface 192.168.122.3
 set nat source rule 11 outbound-interface name 'eth0'
 set nat source rule 11 source address 192.168.59.0/24
 set nat source rule 11 translation address masquerade
