@@ -81,7 +81,19 @@ This guide explores how to use ZeroTier for site-to-site routing in VyOS, runnin
    ```
 5. Authorize the node in [ZeroTier Central](https://my.zerotier.com).
 
+
 Create routes for the endpoints in ZeroTier, ensuring they are properly configured in the "Managed Routes" section. Then, test connectivity between each router by performing ping and traceroute checks. 
+
+## Tips
+To restart container 
+```
+restart container zt1
+```
+
+View routes 
+```
+run show ip route
+```
 
 ### Conclusion
 
