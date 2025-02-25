@@ -95,6 +95,9 @@ View routes
 run show ip route
 ```
 
+### Links
+* https://lev-0.com/2024/06/27/using-zerotier-for-site-to-site-routing-on-vyos/
+
 ### Conclusion
 
 ZeroTier provides a straightforward way to manage site-to-site VPNs on VyOS, eliminating the need for complex dynamic routing protocols. This setup is scalable and adaptable for various network deployments.
