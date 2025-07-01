@@ -29,11 +29,12 @@ objects:
       config: |
         {
           "name": "vlan-${VLAN}",
-          "cniVersion": "0.3.1",
+          "cniVersion": "0.4.0",
           "type": "ovn-k8s-cni-overlay", 
           "topology": "localnet", 
           "netAttachDefName": "${NAMESPACE}/vlan-${VLAN}",
           "vlanID": ${VLAN}, 
+          "mtu": ${MTU},
           "ipam": {}
         }
 
@@ -60,6 +61,10 @@ parameters:
   - description: Namespace to hold the attachment. The 'default' namespace enables cluster-wide use of the attachment
     name: NAMESPACE
     value: default
+  - description: MTU of the VLAN. Match the MTU of the bridge.
+    name: MTU
+    value: 1500
+    required: false
   - description: Net-attach-def description
     name: DESCRIPTION
     value: Attachment to VLAN ${VLAN} through OVS bridge ${BRIDGE} and localnet topology
