@@ -1,0 +1,23 @@
+---
+apiVersion: loki.grafana.com/v1
+kind: LokiStack
+metadata:
+  name: loki
+spec:
+  # ingestor pod 4c, 20Gi
+  # size: 1x.small
+  # ingestor pod 2c, 8Gi
+  size: 1x.extra-small
+  storage:
+    schemas:
+    - version: v12
+      effectiveDate: '2022-06-01'
+    secret:
+      name: loki-s3
+      type: s3
+  storageClassName: ocs-storagecluster-cephfs
+  tenants:
+    mode: openshift-network
+    openshift:
+    adminGroups:
+      - cluster-admins

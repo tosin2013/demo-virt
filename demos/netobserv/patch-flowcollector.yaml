@@ -1,0 +1,22 @@
+# patch flow-collector to add secondary networks
+#
+#oc patch flow-collector netobserv-flow-collector -n netobserv --type=json -p='[{"op": "add", "path": "/spec/agent/ebpf/processor/advanced/secondaryNetworks", "value": [{"index": ["MAC"], "name": "my-vms/l2-network"}]}]'
+---
+# most of these are defaults generated in the console UI
+apiVersion: flows.netobserv.io/v1beta2
+kind: FlowCollector
+metadata:
+  name: cluster
+spec:
+  agent:
+    ebpf:
+      privileged: true
+  processor:
+    advanced:
+      secondaryNetworks:
+      - name: default/vlan-1924
+        index:
+         - MAC
+      - name: default/cudn-1924
+        index:
+         - MAC

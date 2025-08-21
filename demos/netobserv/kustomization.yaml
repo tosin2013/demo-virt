@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: netobserv
+
+resources:
+  - namespace.yaml
+  - objectbucketclaim.yaml
+  - secret.yaml
+  - lokistack.yaml
+  - flowcollector.yaml
+
+patches:
+  - path: patch-flowcollector.yaml
+    target:
+      kind: FlowCollector
+      group: flows.netobserv.io
+      version: v1beta2
+      name: cluster
